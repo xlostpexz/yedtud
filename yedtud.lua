@@ -840,7 +840,7 @@ end
         pcall(function()
             if _G.Raid then
 for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,0) * CFrame.Angles(math.rad(-90),0,0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,0) * CFrame.Angles(math.rad(90),0,0)
     end
             end
         end)
@@ -1014,7 +1014,7 @@ end)
                     for i,v in pairs(game:GetService("Workspace").Monster.Mon:GetChildren()) do 
                         if v.Name == Ms and v.Humanoid.Health > 0 then
                             repeat wait()
-                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(-90),0,0)
+                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(90),0,0)
                             until _G.Farm1 == false or game:GetService("Players").LocalPlayer.PlayerGui.Quest.QuestBoard.Visible == false or v.Humanoid.Health <= 0
                         end
         end
@@ -1045,7 +1045,7 @@ end)
                     for i,v in pairs(game:GetService("Workspace").Monster.Boss:GetChildren()) do 
                         if v.Name == Ms and v.Humanoid.Health > 0 then
                             repeat wait()
-                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(-90),0,0)
+                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(90),0,0)
                             until _G.Farm1 == false or game:GetService("Players").LocalPlayer.PlayerGui.Quest.QuestBoard.Visible == false or v.Humanoid.Health <= 0
                         end
         end
