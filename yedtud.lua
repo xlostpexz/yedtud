@@ -557,7 +557,7 @@ end)
     _G.AUTOHAKI = value
     end)
     
-farm:addButton("Do Everthing Fast", function()
+farm:addButton("Do Everything Fast", function()
     local x = nill
 x = hookfunction(wait,function() return x(0) end)
 end)
