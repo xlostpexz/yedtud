@@ -465,8 +465,6 @@ if plr:IsInGroup("13864646") then
     local farm2 = page:addSection("Auto Equip")
     local page = venyx:addPage("Setting Farm", 5012544693)
     local set = page:addSection("Setting")
-    local page = venyx:addPage("Auto Boss", 5012544693)
-    local boss = page:addSection("Auto Boss")
     local page = venyx:addPage("Teleport", 5012544693)
     local tp = page:addSection("Teleport World 1")
     local tp3 = page:addSection("Teleport World 2")
@@ -478,12 +476,6 @@ if plr:IsInGroup("13864646") then
     local misc = page:addSection("Misc")
     local theme = venyx:addPage("Setting UI", 5012544693)
     local colors = theme:addSection("Setting UI")
-    
-Boss = {}
-
-for i,v in pairs(game:GetService("ReplicatedStorage").MOB:GetChildren()) do
-   table.insert(Boss,v.Name)
-end
     
     set:addSlider("Distace",3,0,120,function(t)
         Disc = t
@@ -520,24 +512,7 @@ end
 	   game:GetService("VirtualInputManager"):SendKeyEvent(false,118,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
     end
     end)
-    
-    boss:addToggle("Auto Boss", _G.Boss, function(value)
-    _G.Boss = value
-    _G.Farm2 = value
-    _G.NoClip = value
-    end)
-    
-    boss:addDropdown("Select Boss", Boss, function(abc)
-        SelectBoss = abc
-    end)
-
-    boss:addButton("Refresh", function()
-            table.clear(Boss)
-    for i,v in pairs(game:GetService("ReplicatedStorage").MOB:GetChildren()) do
-       table.insert(Boss,v.Name)
-    end
-    end)
-
+   
     local Weaponlist = {}
     local Weapon = nil
     
@@ -904,24 +879,6 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.V:InvokeServer(unpack(args))
-
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.Z:InvokeServer()
-
-local args = {
-    [1] = "Down",
-    [2] = CFrame.new(3562.39794921875, 53.87571334838867, 248.41925048828125) * CFrame.Angles(-2.5239460468292236, -1.2899736166000366, -2.542684316635132)
-}
-
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.X:InvokeServer(unpack(args))
-
-local args = {
-    [1] = CFrame.new(3710.005126953125, 54.147857666015625, 279.956298828125) * CFrame.Angles(-2.9822897911071777, -1.3536838293075562, -2.985968828201294)
-}
-
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.C:InvokeServer(unpack(args))
-
-
-
             end
         end)
        end)
@@ -1022,17 +979,6 @@ end)
         game.Players.LocalPlayer.Character.Haki.Value = 1
     	game:GetService("Players").LocalPlayer.Character.Services.Client.Armament:FireServer()
     			 end
-            end
-    			end)
-    			end)
-    end)
-    
-    spawn(function()
-       game:GetService("RunService").RenderStepped:Connect(function()
-        pcall(function()
-            if _G.Boss then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("ReplicatedStorage").MOB[SelectBoss].HumanoidRootPart.CFrame * CFrame.new(0,-5,Disc)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Monster.Boss[SelectBoss].HumanoidRootPart.CFrame * CFrame.new(0,-5,Disc)
             end
     			end)
     			end)
