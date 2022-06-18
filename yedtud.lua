@@ -888,35 +888,12 @@ game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.V:InvokeServer(unpack
        game:GetService("RunService").RenderStepped:Connect(function()
         pcall(function()
             if _G.Spike then
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.Z:InvokeServer()
-            end
-        end)
-       end)
-    end)
-
-    spawn(function()
-       game:GetService("RunService").RenderStepped:Connect(function()
-        pcall(function()
-            if _G.Spike then
 local args = {
-    [1] = CFrame.new(3710.005126953125, 54.147857666015625, 279.956298828125) * CFrame.Angles(-2.9822897911071777, -1.3536838293075562, -2.985968828201294)
+    [1] = CFrame.new(2439.3984375, 53.825706481933594, 135.581787109375) * CFrame.Angles(-0.30777183175086975, -0.27569571137428284, -0.08631511777639389),
+    [2] = "Down"
 }
 
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.C:InvokeServer(unpack(args))
-            end
-        end)
-       end)
-    end)
-    
-    spawn(function()
-       game:GetService("RunService").RenderStepped:Connect(function()
-        pcall(function()
-            if _G.Spike then
-local args = {
-    [1] = CFrame.new(3710.005126953125, 54.147857666015625, 279.956298828125) * CFrame.Angles(-2.9822897911071777, -1.3536838293075562, -2.985968828201294)
-}
-
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.C:InvokeServer(unpack(args))
+game:GetService("Players").LocalPlayer.Backpack.Cyborg.E:InvokeServer(unpack(args))
             end
         end)
        end)
