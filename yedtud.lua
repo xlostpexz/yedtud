@@ -874,7 +874,7 @@ for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
         pcall(function()
             if _G.Spike then
 function Spike()
-    
+    wait(5)
     local args = {
     [1] = "Down",
     [2] = CFrame.new(2432.482666015625, 56.619606018066406, 229.6406707763672) * CFrame.Angles(-1.4930018186569214, -1.4836971759796143, -1.4927070140838623)
