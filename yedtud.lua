@@ -873,12 +873,18 @@ for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
        game:GetService("RunService").RenderStepped:Connect(function()
         pcall(function()
             if _G.Spike then
-local args = {
+function Spike()
+    
+    local args = {
     [1] = "Down",
     [2] = CFrame.new(2432.482666015625, 56.619606018066406, 229.6406707763672) * CFrame.Angles(-1.4930018186569214, -1.4836971759796143, -1.4927070140838623)
 }
 
 game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.V:InvokeServer(unpack(args))
+
+Spike()
+
+end
             end
         end)
        end)
