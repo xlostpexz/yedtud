@@ -1,5 +1,6 @@
 _G.Key = "SUPER-GAY!"
 
+
 local keys = {
     "ASD-GG-WP",
     "DOUBLE-HEE",
@@ -477,7 +478,7 @@ if plr:IsInGroup("13864646") then
     local theme = venyx:addPage("Setting UI", 5012544693)
     local colors = theme:addSection("Setting UI")
     
-    set:addSlider("Distace",3,0,120,function(t)
+    set:addSlider("Distace",-8,-30,0,function(t)
         Disc = t
     end)
     
@@ -520,6 +521,10 @@ if plr:IsInGroup("13864646") then
         table.insert(Weaponlist,v.Name)
     end
     
+farm:addTextbox("Set Level Farm", Level, function(value, focusLost)
+game.Players.LocalPlayer.PlayerStats.lvl.Value = value
+end)
+    
     farm:addToggle("Auto Farm", _G.Farm1, function(value)
     _G.Farm1 = value
     _G.Farm2 = value
@@ -548,15 +553,14 @@ if plr:IsInGroup("13864646") then
     _G.NoClip = value
     end)
     
-    farm:addToggle("Auto Raid", _G.Raid, function(value)
-    _G.Raid = value
-    _G.Farm2 = value
-    _G.NoClip = value
-    end)
-    
     farm:addToggle("Auto Haki", _G.AUTOHAKI, function(value)
     _G.AUTOHAKI = value
     end)
+    
+farm:addButton("Do Everthing Fast", function()
+    local x = nill
+x = hookfunction(wait,function() return x(0) end)
+end)
     
     farm2:addDropdown("Select Weapon", Weaponlist, function(abcd)
         Weapon = abcd
@@ -838,18 +842,6 @@ end
     spawn(function()
        game:GetService("RunService").RenderStepped:Connect(function()
         pcall(function()
-            if _G.Raid then
-for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,0) * CFrame.Angles(math.rad(90),0,0)
-    end
-            end
-        end)
-       end)
-    end)
-    
-    spawn(function()
-       game:GetService("RunService").RenderStepped:Connect(function()
-        pcall(function()
             if _G.Equip then
             wait(0.5)
     game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
@@ -864,24 +856,6 @@ for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
             if _G.Equip2 then
             wait(0.5)
     game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon2))
-            end
-        end)
-       end)
-    end)
-    
-    spawn(function()
-       game:GetService("RunService").RenderStepped:Connect(function()
-        pcall(function()
-            if _G.Spike then
-function Spike()
-    local args = {
-    [1] = "Down",
-    [2] = CFrame.new(2432.482666015625, 56.619606018066406, 229.6406707763672) * CFrame.Angles(-1.4930018186569214, -1.4836971759796143, -1.4927070140838623)
-}
-
-game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.V:InvokeServer(unpack(args))
-Spike()
-end
             end
         end)
        end)
@@ -901,12 +875,29 @@ game:GetService("Players").LocalPlayer.Backpack.Cyborg.E:InvokeServer(unpack(arg
         end)
        end)
     end)
+    
+
 
     spawn(function()
        game:GetService("RunService").RenderStepped:Connect(function()
         pcall(function()
             if _G.AF then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PlayerCharacters[Select].HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+            end
+        end)
+       end)
+    end)
+
+    spawn(function()
+       game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+            if _G.Spike then
+         local args = {
+    [1] = "Down",
+    [2] = CFrame.new(2432.482666015625, 56.619606018066406, 229.6406707763672) * CFrame.Angles(-1.4930018186569214, -1.4836971759796143, -1.4927070140838623)
+}
+
+game:GetService("Players").LocalPlayer.Backpack.SpikeSpike.V:InvokeServer(unpack(args))
             end
         end)
        end)
@@ -1011,7 +1002,7 @@ end)
                     for i,v in pairs(game:GetService("Workspace").Monster.Mon:GetChildren()) do 
                         if v.Name == Ms and v.Humanoid.Health > 0 then
                             repeat wait()
-                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(90),0,0)
+                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,Disc,0) * CFrame.Angles(math.rad(90),0,0)
                             until _G.Farm1 == false or game:GetService("Players").LocalPlayer.PlayerGui.Quest.QuestBoard.Visible == false or v.Humanoid.Health <= 0
                         end
         end
@@ -1042,7 +1033,7 @@ end)
                     for i,v in pairs(game:GetService("Workspace").Monster.Boss:GetChildren()) do 
                         if v.Name == Ms and v.Humanoid.Health > 0 then
                             repeat wait()
-                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-8,Disc) * CFrame.Angles(math.rad(90),0,0)
+                           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,Disc,0) * CFrame.Angles(math.rad(90),0,0)
                             until _G.Farm1 == false or game:GetService("Players").LocalPlayer.PlayerGui.Quest.QuestBoard.Visible == false or v.Humanoid.Health <= 0
                         end
         end
