@@ -865,7 +865,7 @@ end
         pcall(function()
             if _G.Raid then
 for i,v in pairs(game:GetService("Workspace").MOB:GetChildren()) do
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-5,11)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,-5,10)
     end
             end
         end)
